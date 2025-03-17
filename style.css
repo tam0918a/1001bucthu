@@ -1,0 +1,242 @@
+/* style.css */
+
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding-bottom: 10px; /* Thêm padding bottom cho body, bằng hoặc hơn chiều cao footer *
+    background: linear-gradient(to bottom, #fafafa, #f0f0f0); /* Gradient nền trắng ngà */
+    color: #333;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased; /* Tối ưu hiển thị font trên webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Tối ưu hiển thị font trên Firefox macOS */
+}
+
+header {
+    background-color: #f5f5dc; /* Màu beige nhạt cho header */
+    color: #555;
+    padding: 40px 0; /* Tăng padding header */
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+    z-index: 101; /* Đảm bảo header ở trên footer nếu cần */
+    position: relative; /* Cần thiết để z-index có hiệu lực */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 3.5em; /* Tiêu đề lớn hơn */
+    font-weight: 400; /* Regular weight */
+    color: #b87333; /* Vàng đồng cho tiêu đề */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    letter-spacing: 1px; /* Tăng khoảng cách chữ tiêu đề */
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 0;
+}
+
+main#content {
+    max-width: 950px; /* Tăng chiều rộng nội dung */
+    margin: 0 auto;
+    padding: 30px;
+}
+
+article.letter {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px; /* Bo góc nhiều hơn */
+    padding: 40px; /* Tăng padding thư */
+    margin-bottom: 40px; /* Tăng margin thư */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.06); /* Bóng đổ mềm mại hơn */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Thêm transition cho hiệu ứng hover */
+}
+
+article.letter:hover {
+    transform: translateY(-8px); /* Nhấc lên nhiều hơn khi hover */
+    box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.08); /* Bóng đổ đậm hơn khi hover */
+}
+
+article.letter h2 {
+    font-family: 'Playfair Display', serif;
+    color: #c71585; /* Hồng tím cho tiêu đề thư */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Tiêu đề thư lớn hơn */
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+article.letter .date {
+    color: #999;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+article.letter .letter-content {
+    border-top: 1px dashed #ccc;
+    padding-top: 25px;
+}
+
+article.letter .letter-content h3 {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+article.letter .letter-content p {
+    margin-bottom: 20px;
+    font-size: 1.15em; /* Kích thước chữ nội dung lớn hơn */
+    line-height: 1.8; /* Tăng khoảng cách dòng nội dung */
+}
+
+.chinese-text {
+    font-family: 'SimSun', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif; /* Ưu tiên font chữ Hán */
+}
+
+footer {
+    text-align: center;
+    padding: 1px 0;
+    background-color: #f0f0f0; /* Màu nền footer nhạt hơn */
+    border-top: 1px solid #e0e0e0;
+    font-size: 1em;
+    color: #777;
+    margin-top: 10px; /* Tăng margin top footer */
+
+    /* Thêm các style sau để làm sticky footer */
+    position: fixed; /* Cố định vị trí footer */
+    bottom: 0;      /* Đặt footer ở đáy màn hình */
+    left: 0;        /* Kéo dài footer từ lề trái */
+    width: 100%;     /* Kéo dài footer hết chiều rộng màn hình */
+    z-index: 100;    /* Đảm bảo footer luôn ở trên các nội dung khác nếu cần */
+}
+/* Icon trái tim (CSS-based) */
+.heart-icon, .footer-icon {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: #c71585; /* Màu hồng tím */
+    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M462.3 62.6c-4.7-13.8-16.6-24.8-30.9-28.3L322.1 3.2c-13.1-3.5-27.5 1.8-34.5 14.3L256 50.1l-31.6-32.6c-7-7.5-21.4-12.8-34.5-14.3L80.9 34.3c-14.3 3.5-26.2 14.5-30.9 28.3C-1.5 80.8 5.1 98.9 18.4 106.2l48.6 29.6L256 310.9 445 135.8l48.6-29.6c13.3-7.3 19.9-25.4 16.3-43.6z"/></svg>');
+    mask-size: contain;
+    -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M462.3 62.6c-4.7-13.8-16.6-24.8-30.9-28.3L322.1 3.2c-13.1-3.5-27.5 1.8-34.5 14.3L256 50.1l-31.6-32.6c-7-7.5-21.4-12.8-34.5-14.3L80.9 34.3c-14.3 3.5-26.2 14.5-30.9 28.3C-1.5 80.8 5.1 98.9 18.4 106.2l48.6 29.6L256 310.9 445 135.8l48.6-29.6c13.3-7.3 19.9-25.4 16.3-43.6z"/></svg>');
+    -webkit-mask-size: contain;
+    vertical-align: middle;
+    margin: 0 0.2em; /* Khoảng cách xung quanh icon */
+}
+
+.footer-icon {
+    width: 0.7em;
+    height: 0.7em;
+}
+
+/* CSS cho màn hình nhỏ (ví dụ iPhone - dưới 768px chiều rộng) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.95em; /* Giảm font gốc một chút */
+        line-height: 1.5; /* Giảm line-height một chút cho màn hình nhỏ */
+    }
+
+    header {
+        padding: 25px 0; /* Giảm padding header */
+        margin-bottom: 20px; /* Giảm margin bottom header */
+    }
+
+    header h1 {
+        font-size: 2.8em; /* Giảm kích thước tiêu đề chính */
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1em; /* Giảm kích thước mô tả header */
+    }
+
+    main#content {
+        padding: 20px; /* Giảm padding main content */
+        margin-top: 10px; /* Giảm margin top main content */
+        margin-bottom: 10px; /* Giảm margin bottom main content */
+    }
+
+    article.letter {
+        padding: 25px; /* Giảm padding thư */
+        margin-bottom: 25px; /* Giảm margin thư */
+        border-radius: 10px; /* Giảm bo góc thư một chút */
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); /* Giảm bóng đổ */
+    }
+
+    article.letter h2 {
+        font-size: 1.8em; /* Giảm kích thước tiêu đề thư */
+        margin-bottom: 15px;
+    }
+
+    article.letter .date {
+        font-size: 0.9em; /* Giảm kích thước ngày tháng */
+        margin-bottom: 15px;
+    }
+
+    article.letter .letter-content {
+        padding-top: 20px; /* Giảm padding top nội dung thư */
+    }
+
+    article.letter .letter-content p {
+        margin-bottom: 15px; /* Giảm margin bottom đoạn văn bản */
+        font-size: 1em; /* Giảm kích thước chữ nội dung thư */
+        line-height: 1.6; /* Giảm line-height nội dung thư */
+    }
+
+    footer {
+        padding: 25px 0; /* Giảm padding footer */
+        margin-top: 30px; /* Giảm margin top footer */
+        font-size: 0.9em; /* Giảm kích thước chữ footer */
+    }
+
+    .heart-icon, .footer-icon {
+        width: 0.7em; /* Giảm kích thước icon trái tim */
+        height: 0.7em;
+    }
+
+    .footer-icon {
+        width: 0.6em;
+        height: 0.6em;
+    }
+}
+
+/* Có thể thêm media query nhỏ hơn nữa cho các iPhone rất nhỏ (ví dụ dưới 375px) nếu cần */
+@media screen and (max-width: 375px) {
+    header h1 {
+        font-size: 2.5em; /* Giảm thêm tiêu đề chính trên iPhone nhỏ */
+    }
+    article.letter h2 {
+        font-size: 1.6em; /* Giảm thêm tiêu đề thư trên iPhone nhỏ */
+    }
+    /* ... Các điều chỉnh khác nếu cần ... */
+}
+
+/* CSS cho phần giới thiệu website */
+#website-intro {
+    background-color: #f8f8f8; /* Màu nền khác biệt một chút so với body */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);
+    text-align: center; /* Căn giữa chữ trong phần giới thiệu */
+}
+
+#website-intro p {
+    font-size: 1.1em;
+    color: #666; /* Màu chữ nhạt hơn một chút so với nội dung chính */
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+#website-intro p:last-child {
+    margin-bottom: 0; /* Loại bỏ margin bottom cho đoạn văn cuối cùng */
+    font-style: italic; /* In nghiêng dòng chữ cuối (ví dụ: "Tùy chỉnh...") */
+    font-size: 1em; /* Kích thước chữ nhỏ hơn cho dòng cuối */
+}
