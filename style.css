@@ -240,3 +240,92 @@ footer {
     font-style: italic; /* In nghiêng dòng chữ cuối (ví dụ: "Tùy chỉnh...") */
     font-size: 1em; /* Kích thước chữ nhỏ hơn cho dòng cuối */
 }
+
+/* Style cho nút hamburger */
+.hamburger {
+    position: fixed; /* Cố định vị trí */
+    top: 20px;      /* Vị trí top, có thể điều chỉnh */
+    left: 20px;     /* Vị trí left, có thể điều chỉnh */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent; /* Nền trong suốt */
+    border: none;          /* Không có border */
+    cursor: pointer;       /* Con trỏ chuột hình bàn tay */
+    padding: 0;
+    z-index: 100; /* Đảm bảo nút hamburger ở trên menu nếu cần */
+}
+
+.hamburger:focus {
+    outline: none; /* Loại bỏ outline mặc định khi focus */
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333; /* Màu của các gạch hamburger */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Hiệu ứng transition */
+}
+
+/* Ẩn menu sidebar mặc định */
+#sidebar-menu {
+    position: fixed;
+    left: -250px; /* Ẩn menu ra ngoài màn hình bên trái */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f8f8f8;
+    border-right: 1px solid #e0e0e0;
+    padding-top: 20px;
+    z-index: 99;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    transition: left 0.3s ease; /* Tạo hiệu ứng trượt khi hiển thị/ẩn menu */
+}
+
+/* Class để hiển thị menu khi nút hamburger được click */
+#sidebar-menu.sidebar-open {
+    left: 0; /* Hiển thị menu bằng cách đưa nó vào màn hình từ bên trái */
+}
+
+/* Điều chỉnh lại body và nội dung chính - loại bỏ margin trái cố định */
+body {
+    margin-left: 0; /* Không còn margin trái cố định nữa */
+    padding-bottom: 50px;
+}
+
+header, main#content, footer, #website-intro {
+    margin-right: 0;
+    margin-left: 0; /* Loại bỏ margin trái */
+    padding-left: 20px; /* Giữ padding trái cho nội dung */
+    padding-right: 20px;
+    transition: margin-left 0.3s ease; /* Thêm transition cho hiệu ứng dịch chuyển nội dung (nếu muốn) */
+}
+
+/* Optional: Dịch chuyển nội dung chính sang phải khi menu mở ra */
+body.sidebar-open {
+    margin-left: 250px; /* Dịch chuyển body sang phải bằng độ rộng menu khi menu mở */
+}
+
+
+/* Responsive adjustments - giữ media query cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    /* Hamburger button có thể luôn hiển thị, hoặc chỉ hiển thị ở màn hình nhỏ tùy ý */
+    /* .hamburger { display: block; }  */
+
+    /* Menu sidebar bây giờ được điều khiển bởi hamburger, không cần ẩn ở media query nữa */
+    /* #sidebar-menu { display: none; } */
+
+    body {
+        margin-left: 0; /* Reset margin trái trên màn hình nhỏ */
+    }
+    body.sidebar-open {
+        margin-left: 250px; /* Vẫn dịch chuyển body trên màn hình nhỏ khi menu mở */
+    }
+    header, main#content, footer, #website-intro {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
